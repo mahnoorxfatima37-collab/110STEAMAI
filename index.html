@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jennie Gallery • by Mahnoor Fatima</title>
+
+<style>
+:root {
+  --bg: #050509;
+  --text: #ffffff;
+  --accent: #ff4f9a;
+  --nav-bg: rgba(5, 5, 9, 0.8);
+}
+
+body.light {
+  --bg: #f5f5f5;
+  --text: #111;
+  --nav-bg: rgba(255,255,255,0.9);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(14px);
+  background: var(--nav-bg);
+  z-index: 1000;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+nav a:hover { opacity: 1; }
+
+.toggle-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--text);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.hero {
+  height: 100vh;
+  background: url("https://i.pinimg.com/736x/a2/86/4d/a2864d686fa62dc8bd3eef13a979e856.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.gallery-header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.gallery-header p { opacity: 0.8; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+  padding: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.4s;
+}
+
+.gallery-grid img:hover { transform: scale(1.03); }
+
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="brand">Mahnoor Fatima</div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <button class="toggle-btn">Dark / Light</button>
+  </div>
+</nav>
+
+<section class="hero fade" id="home">
+  <h1>Jennie Gallery</h1>
+</section>
+
+<section class="gallery-header fade" id="gallery">
+  <h2>Gallery</h2>
+  <p>A curated collection of Jennie visuals by <strong>Mahnoor Fatima</strong>.</p>
+</section>
+
+<section class="gallery-grid fade">
+  <img src="https://i.pinimg.com/736x/25/ab/ef/25abef58ab532e60073a5eded790f383.jpg">
+  <img src="https://i.pinimg.com/736x/42/e5/41/42e5416a5c0d00eb463475f5cef9dcb4.jpg">
+  <img src="https://i.pinimg.com/736x/14/bb/a7/14bba7ac486a74cb5728426bab9ec387.jpg">
+  <img src="https://i.pinimg.com/736x/f8/bc/90/f8bc90950eadf4c4fb65fc55c9361771.jpg">
+  <img src="https://i.pinimg.com/736x/fa/d7/8f/fad78fe7501d787aeb12de32400afabd.jpg">
+  <img src="https://i.pinimg.com/736x/ed/c0/a3/edc0a3f059b3d96a1bee285bfd61ff4b.jpg">
+<img src="https://i.pinimg.com/736x/7d/97/c3/7d97c372083946ec0441c47e0eebe94e.jpg"> </section>
+
+<footer>
+  © 2026 Mahnoor Fatima • All rights reserved
+</footer>
+
+<script>
+document.querySelector(".toggle-btn").addEventListener("click", () => {
+  document.body.classList.toggle("light");
+});
+</script>
+
+</body>
+</html>
